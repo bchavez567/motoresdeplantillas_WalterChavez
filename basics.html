@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handlebars</title>
+    </head>
+
+    <body>
+        <div id="root"></div>
+    <!-- Include Handlebars from a CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script>
+    // compile the template
+    const template = Handlebars.compile(`
+        <h1>Holaaa</h1>
+        <h2>Me llamo {{nombre}} {{apellido}}</>
+    `);
+    // execute the compiled template and print the output to the
+    const html = template({ nombre:"Walter" , apellido: "Chavez"});
+    console.log(html);
+    document.querySelector('div').innerHTML = html;
+</script>
+</body>
+</html>
